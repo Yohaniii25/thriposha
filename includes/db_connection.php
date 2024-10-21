@@ -1,6 +1,6 @@
 <?php
-$db = new mysqli("localhost", "thriposha_thriposha", "hH(3_wCFnTWc", "thriposha_thriposha");
+$conn = new mysqli("localhost", "root", "", "thriposha");
 
-if ($db->connect_error) {
-    die("Connection failed: " . $db->connect_error);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 } 
