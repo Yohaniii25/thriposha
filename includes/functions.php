@@ -3,12 +3,19 @@
 include '../includes/db_connection.php';
 
 function fetchNews() {
-    global $db; 
+    global $conn; 
 
 
     $query = "SELECT news_id, title, news_description, image FROM news order by created_at DESC";
-    $result = mysqli_query($db, $query);
+    $result = mysqli_query($conn, $query);
 
+    // check if the query is successful
+    if (!$result) {
+        echo "Error: " . mysqli_error($conn);
+        exit();
+    }
+
+    // Return the fetched rows if available, otherwise return an empty array
     if (mysqli_num_rows($result) > 0) {
         return mysqli_fetch_all($result, MYSQLI_ASSOC);
     } else {
@@ -18,10 +25,10 @@ function fetchNews() {
 
 // view single news
 function fetchNewsById($news_id) {
-    global $db;
+    global $conn;
 
     $query = "SELECT news_id, title, news_description, image FROM news WHERE news_id = ?";
-    $stmt = $db->prepare($query);
+    $stmt = $conn->prepare($query);
     $stmt->bind_param("i", $news_id);
     $stmt->execute();
     $result = $stmt->get_result();
