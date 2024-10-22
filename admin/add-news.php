@@ -122,7 +122,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             <div class="col-lg-6">
                                 <ol class="breadcrumb pull-right">
                                     <li class="breadcrumb-item">
-                                        <a href="index.html">
+                                        <a href="index.php">
                                             <i data-feather="home"></i>
                                         </a>
                                     </li>
