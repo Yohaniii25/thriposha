@@ -89,93 +89,76 @@ include('../includes/index_header.php');
 
 
         <!-- banner-section -->
-        <section class="banner-section style-one">
-            <div class="banner-carousel owl-theme owl-carousel owl-dots-none nav-style-one">
-                <div class="slide-item">
-                    <div class="image-layer" style="background-image:url(../assets/images/banner/banner-1.jpg)"></div>
-                    <div class="anim-icon">
-                        <div class="icon icon-1" style="background-image: url(../assets/images/icons/anim-icon-1.png);">
-                        </div>
-                        <div class="icon icon-2" style="background-image: url(../assets/images/icons/anim-icon-2.png);">
-                        </div>
-                        <div class="icon icon-3" style="background-image: url(../assets/images/icons/anim-icon-3.png);">
-                        </div>
-                        <div class="icon icon-4" style="background-image: url(../assets/images/shape/shape-1.png);">
-                        </div>
-                        <div class="icon icon-5" style="background-image: url(../assets/images/shape/shape-2.png);">
-                        </div>
-                    </div>
-                    <div class="auto-container">
-                        <div class="content-inner">
-                            <div class="content-box">
-                                <h1>Taste From The Good Old Days.</h1>
-                                <p>Trend Spotted by Europe Locals – Suposha!</p>
-                                <div class="btn-box">
-                                    <a href="products.php" class="banner-btn">Explore Now</a>
-                                </div>
-                            </div>
-                            <figure class="image-box style-one">
-                                <img src="../assets/images/banner/packetss.png" alt="">
-                            </figure>
+<section class="banner-section style-one">
+    <div class="banner-carousel owl-theme owl-carousel owl-dots-none nav-style-one">
+        <div class="slide-item">
+            <div class="image-layer"></div>
+            <div class="anim-icon">
+                <div class="icon icon-1"></div>
+                <div class="icon icon-2"></div>
+                <div class="icon icon-3"></div>
+                <div class="icon icon-4"></div>
+                <div class="icon icon-5"></div>
+            </div>
+            <div class="auto-container">
+                <div class="content-inner">
+                    <div class="content-box">
+                        <h1>Taste From The Good Old Days.</h1>
+                        <p>Trend Spotted by Europe Locals – Colorful Macarons!</p>
+                        <div class="btn-box">
+                            <a href="index.php" class="banner-btn">Explore Now</a>
                         </div>
                     </div>
-                </div>
-                <div class="slide-item">
-                    <div class="image-layer" style="background-image:url(../assets/images/banner/banner-2.jpg)"></div>
-                    <div class="anim-icon">
-                        <div class="icon icon-4" style="background-image: url(../assets/images/shape/shape-1.png);">
-                        </div>
-                        <div class="icon icon-5" style="background-image: url(../assets/images/shape/shape-2.png);">
-                        </div>
-                        <div class="icon icon-6 rotate-me" style="background-image: url(../assets/images/shape/shape-3.png);"></div>
-                    </div>
-                    <div class="auto-container">
-                        <div class="content-inner">
-                            <div class="content-box">
-                                <h1>Savor the Morning, Embrace the Day</h1>
-                                <p>Suposha, Your Daily Boost of Vitality!</p>
-                                <div class="btn-box">
-                                    <a href="index.php" class="banner-btn">Explore Now</a>
-                                </div>
-                            </div>
-                            <figure class="image-box style-two"><img src="../assets/images/banner/suposha.png" alt="">
-                            </figure>
-                        </div>
-                    </div>
-                </div>
-                <div class="slide-item">
-                    <!-- <div class="image-layer" style="background-image:url(../assets/images/banner/banner-3.jpg)"></div> -->
-                    <div class="image-layer" style="background-color:#477534;"></div>
-
-                    <div class="anim-icon">
-                        <div class="icon icon-1" style="background-image: url(../assets/images/icons/anim-icon-1.png);">
-                        </div>
-                        <div class="icon icon-2" style="background-image: url(../assets/images/icons/anim-icon-2.png);">
-                        </div>
-                        <div class="icon icon-3" style="background-image: url(../assets/images/icons/anim-icon-3.png);">
-                        </div>
-                        <div class="icon icon-4" style="background-image: url(../assets/images/shape/shape-1.png);">
-                        </div>
-                        <div class="icon icon-5" style="background-image: url(../assets/images/shape/shape-2.png);">
-                        </div>
-                    </div>
-                    <div class="auto-container">
-                        <div class="content-inner">
-                            <div class="content-box">
-                                <h1>Suposha: A Symphony of Grains, </h1>
-                                <p>Symphony of Flavor – Start Your Day Righ</p>
-                                <div class="btn-box">
-                                    <a href="index.php" class="banner-btn">Explore Now</a>
-                                </div>
-                            </div>
-                            <!-- <figure class="image-box style-one"><img src="../assets/images/banner/ss_bowl.png" alt=""></figure> -->
-                            <figure class="image-box style-one"><img src="../assets/images/banner/Full_Logo.png" alt="">
-                            </figure>
-                        </div>
-                    </div>
+                    <figure class="image-box style-one">
+                        <img src="../assets/thriposha_assets/images/home/packetss.png" alt="">
+                    </figure>
                 </div>
             </div>
-        </section>
+        </div>
+        <div class="slide-item">
+            <div class="image-layer" style="background-color:#3aa331"></div>
+            <div class="anim-icon">
+                <div class="icon icon-4"></div>
+                <div class="icon icon-5"></div>
+                <div class="icon icon-6 rotate-me"></div>
+            </div>
+            <div class="auto-container">
+                <div class="content-inner">
+                    <div class="content-box">
+                        <h1>Taste From The Good Old Days.</h1>
+                        <p>Trend Spotted by Europe Locals – Colorful Macarons!</p>
+                        <div class="btn-box">
+                            <a href="index.php" class="banner-btn">Explore Now</a>
+                        </div>
+                    </div>
+                    <figure class="image-box style-two"><img src="../assets/thriposha_assets/images/home/suposha.png" alt=""></figure>
+                </div>
+            </div>
+        </div>
+        <div class="slide-item">
+            <div class="image-layer" style="background-color: #e9b56a"></div>
+            <div class="anim-icon">
+                <div class="icon icon-1"></div>
+                <div class="icon icon-2"></div>
+                <div class="icon icon-3"></div>
+                <div class="icon icon-4"></div>
+                <div class="icon icon-5"></div>
+            </div>
+            <div class="auto-container">
+                <div class="content-inner">
+                    <div class="content-box">
+                        <h1>Taste From The Good Old Days.</h1>
+                        <p>Trend Spotted by Europe Locals – Colorful Macarons!</p>
+                        <div class="btn-box">
+                            <a href="index.php" class="banner-btn">Explore Now</a>
+                        </div>
+                    </div>
+                    <figure class="image-box style-one"><img src="../assets/thriposha_assets/images/home/Full_Logo.png" alt=""></figure>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
         <!-- banner-section end -->
 
 
@@ -361,74 +344,6 @@ include('../includes/index_header.php');
 
 
 
-        <!-- contact-section -->
-        <section class="contact-section sec-pad" style=" background-color: #F9E79F;">
-            <div class="auto-container">
-                <div class="sec-title centred">
-                    <p>Contact us</p>
-                    <h2>Get In Touch</h2>
-                </div>
-                <div class="row clearfix">
-                    <div class="col-lg-4 col-md-6 col-sm-12 info-column">
-                        <div class="contact-info-inner">
-                            <div class="single-box">
-                                <h3>Opening hours</h3>
-                                <ul class="list clearfix">
-                                    <li>Daily: 9.30 AM–6.00 PM</li>
-                                    <li>Sunday & Holidays: Closed</li>
-                                </ul>
-                            </div>
-                            <div class="single-box">
-                                <h3>Contact info</h3>
-                                <ul class="list clearfix">
-                                    <li>P.O.Box 17, Negombo Road, Kapuwatta,Ja-ela.</li>
-                                    <li><a href="mailto:example@info.com">thriposha@gmail.com</a></li>
-                                    <li><a href="tel:6174959400326">0112 236 588 / 0112 237 418</a></li>
-                                </ul>
-                            </div>
-                            <div class="single-box">
-                                <h3>Social contact</h3>
-                                <ul class="social-links clearfix">
-                                    <li><a href="index.php"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="index.php"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="index.php"><i class="fab fa-vimeo-v"></i></a></li>
-                                    <li><a href="index.php"><i class="fab fa-linkedin-in"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-8 col-md-6 col-sm-12 form-column">
-                        <div class="form-inner">
-                            <h3>Drop us a line</h3>
-                            <form method="post" action="sendemail.php" id="contact-form" class="default-form">
-                                <div class="row clearfix">
-                                    <div class="col-lg-6 col-md-6 col-sm-12 form-group">
-                                        <input type="text" name="username" placeholder="Your Name *" required="">
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-12 form-group">
-                                        <input type="email" name="email" placeholder="Your Email *" required="">
-                                    </div>
-                                    <div class="col-lg-6 col-md-12 col-sm-12 form-group">
-                                        <input type="text" name="phone" required="" placeholder="Your Phone">
-                                    </div>
-                                    <div class="col-lg-6 col-md-12 col-sm-12 form-group">
-                                        <input type="text" name="subject" required="" placeholder="Subject">
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 form-group">
-                                        <textarea name="message" placeholder="Your Message ..."></textarea>
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 form-group message-btn">
-                                        <button class="theme-btn-one" type="submit" name="submit-form">Submit
-                                            Now</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- contact-section end -->
 
 
         <?php

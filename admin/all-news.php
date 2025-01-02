@@ -115,7 +115,7 @@ $news = fetchNews();
                                         <table class="table all-package order-list-table" id="editableTable">
                                             <thead>
                                                 <tr>
-                                                    <th>Image</th>
+                                                    
                                                     <th>News id</th>
                                                     <th>Title</th>
                                                     <th>Description</th>
@@ -127,14 +127,7 @@ $news = fetchNews();
                                                 <?php if (!empty($news)): ?>
                                                 <?php foreach ($news as $newsItem): ?>
                                                 <tr>
-                                                    <td>
-                                                        <!-- display image if available -->
-                                                         <?php if ($news['image']): ?>
-                                                            <img src="../assets/images/news/<?php echo $newsItem['image']; ?>" alt="news image" width="100">
-                                                        <?php else: ?>
-                                                            <img src="../assets/images/news/default.jpg" alt="news image" width="100">
-                                                        <?php endif; ?>
-                                                    </td>
+
 
                                                     <td><?php echo $newsItem['news_id']; ?></td>
                                                     <td><?php echo $newsItem['title']; ?></td>

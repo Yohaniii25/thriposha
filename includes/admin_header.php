@@ -1,3 +1,17 @@
+<style>
+
+.page-wrapper .page-body-wrapper .page-sidebar .main-header-left {
+
+    height: 100px !important;
+    
+}
+
+.page-wrapper .page-body-wrapper .page-sidebar .main-header-left .logo-wrapper img {
+    width: 150px !important;
+}
+</style>
+
+
 <div class="page-main-header">
             <div class="main-header-right row">
                 <div class="main-header-left d-lg-none w-auto">

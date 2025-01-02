@@ -32,8 +32,18 @@
     <link href="../assets/thriposha_assets/css/global.css" rel="stylesheet">
     <link href="../assets/thriposha_assets/css/style.css" rel="stylesheet">
     <link href="../assets/thriposha_assets/css/responsive.css" rel="stylesheet">
+    
+    <style>
+@media only screen and (max-width: 767px) {
+    .banner-section .content-inner .image-box, .banner-section.style-one .banner-carousel .slide-item .image-layer, .banner-section .anim-icon {
+        display: flex
+;
+    }
+}
+    </style>
 
 </head>
+
 
 
 <!-- page wrapper -->
@@ -62,76 +72,78 @@
 
 
         <!-- banner-section -->
-        <section class="banner-section style-one">
-            <div class="banner-carousel owl-theme owl-carousel owl-dots-none nav-style-one">
-                <div class="slide-item">
-                    <div class="image-layer" style="background-image:url(../assets/thriposha_assets/images/banner/banner-1.jpg)"></div>
-                    <div class="anim-icon">
-                        <div class="icon icon-1" style="background-image: url(../assets/thriposha_assets/images/icons/anim-icon-1.png);"></div>
-                        <div class="icon icon-2" style="background-image: url(../assets/thriposha_assets/images/icons/anim-icon-2.png);"></div>
-                        <div class="icon icon-3" style="background-image: url(../assets/thriposha_assets/images/icons/anim-icon-3.png);"></div>
-                        <div class="icon icon-4" style="background-image: url(../assets/thriposha_assets/images/shape/shape-1.png);"></div>
-                        <div class="icon icon-5" style="background-image: url(../assets/thriposha_assets/images/shape/shape-2.png);"></div>
-                    </div>
-                    <div class="auto-container">
-                        <div class="content-inner">
-                            <div class="content-box">
-                                <h1>Taste From The Good Old Days.</h1>
-                                <p>Trend Spotted by Europe Locals – Colorful Macarons!</p>
-                                <div class="btn-box">
-                                    <a href="index.php" class="banner-btn">Explore Now</a>
-                                </div>
-                            </div>
-                            <figure class="image-box style-one">
-                                <img src="../assets/thriposha_assets/images/home/slider_03.png" alt="">
-                            </figure>
+<section class="banner-section style-one">
+    <div class="banner-carousel owl-theme owl-carousel owl-dots-none nav-style-one">
+        <div class="slide-item">
+            <div class="image-layer"></div>
+            <div class="anim-icon">
+                <div class="icon icon-1"></div>
+                <div class="icon icon-2"></div>
+                <div class="icon icon-3"></div>
+                <div class="icon icon-4"></div>
+                <div class="icon icon-5"></div>
+            </div>
+            <div class="auto-container">
+                <div class="content-inner">
+                    <div class="content-box">
+                        <h1>Taste From The Good Old Days.</h1>
+                        <p>Trend Spotted by Europe Locals – Colorful Macarons!</p>
+                        <div class="btn-box">
+                            <a href="index.php" class="banner-btn">Explore Now</a>
                         </div>
                     </div>
-                </div>
-                <div class="slide-item">
-                    <div class="image-layer" style="background-color:#3aa331"></div>
-                    <div class="anim-icon">
-                        <div class="icon icon-4" style="background-image: url(../assets/thriposha_assets/images/shape/shape-1.png);"></div>
-                        <div class="icon icon-5" style="background-image: url(../assets/thriposha_assets/images/shape/shape-2.png);"></div>
-                        <div class="icon icon-6 rotate-me" style="background-image: url(../assets/thriposha_assets/images/shape/shape-3.png);"></div>
-                    </div>
-                    <div class="auto-container">
-                        <div class="content-inner">
-                            <div class="content-box">
-                                <h1>Taste From The Good Old Days.</h1>
-                                <p>Trend Spotted by Europe Locals – Colorful Macarons!</p>
-                                <div class="btn-box">
-                                    <a href="index.php" class="banner-btn">Explore Now</a>
-                                </div>
-                            </div>
-                            <figure class="image-box style-two"><img src="../assets/thriposha_assets/images/home/sloder_05.png" alt=""></figure>
-                        </div>
-                    </div>
-                </div>
-                <div class="slide-item">
-                    <div class="image-layer" style="background-color: #e9b56a"></div>
-                    <div class="anim-icon">
-                        <div class="icon icon-1" style="background-image: url(../assets/thriposha_assets/images/icons/anim-icon-1.png);"></div>
-                        <div class="icon icon-2" style="background-image: url(../assets/thriposha_assets/images/icons/anim-icon-2.png);"></div>
-                        <div class="icon icon-3" style="background-image: url(../assets/thriposha_assets/images/icons/anim-icon-3.png);"></div>
-                        <div class="icon icon-4" style="background-image: url(../assets/thriposha_assets/images/shape/shape-1.png);"></div>
-                        <div class="icon icon-5" style="background-image: url(../assets/thriposha_assets/images/shape/shape-2.png);"></div>
-                    </div>
-                    <div class="auto-container">
-                        <div class="content-inner">
-                            <div class="content-box">
-                                <h1>Taste From The Good Old Days.</h1>
-                                <p>Trend Spotted by Europe Locals – Colorful Macarons!</p>
-                                <div class="btn-box">
-                                    <a href="index.php" class="banner-btn">Explore Now</a>
-                                </div>
-                            </div>
-                            <figure class="image-box style-one"><img src="../assets/thriposha_assets/images/home/bg_1.png" alt=""></figure>
-                        </div>
-                    </div>
+                    <figure class="image-box style-one">
+                        <img src="../assets/thriposha_assets/images/home/slider_03.png" alt="">
+                    </figure>
                 </div>
             </div>
-        </section>
+        </div>
+        <div class="slide-item">
+            <div class="image-layer" style="background-color:#3aa331"></div>
+            <div class="anim-icon">
+                <div class="icon icon-4"></div>
+                <div class="icon icon-5"></div>
+                <div class="icon icon-6 rotate-me"></div>
+            </div>
+            <div class="auto-container">
+                <div class="content-inner">
+                    <div class="content-box">
+                        <h1>Taste From The Good Old Days.</h1>
+                        <p>Trend Spotted by Europe Locals – Colorful Macarons!</p>
+                        <div class="btn-box">
+                            <a href="index.php" class="banner-btn">Explore Now</a>
+                        </div>
+                    </div>
+                    <figure class="image-box style-two"><img src="../assets/thriposha_assets/images/home/sloder_05.png" alt=""></figure>
+                </div>
+            </div>
+        </div>
+        <div class="slide-item">
+            <div class="image-layer" style="background-color: #e9b56a"></div>
+            <div class="anim-icon">
+                <div class="icon icon-1"></div>
+                <div class="icon icon-2"></div>
+                <div class="icon icon-3"></div>
+                <div class="icon icon-4"></div>
+                <div class="icon icon-5"></div>
+            </div>
+            <div class="auto-container">
+                <div class="content-inner">
+                    <div class="content-box">
+                        <h1>Taste From The Good Old Days.</h1>
+                        <p>Trend Spotted by Europe Locals – Colorful Macarons!</p>
+                        <div class="btn-box">
+                            <a href="index.php" class="banner-btn">Explore Now</a>
+                        </div>
+                    </div>
+                    <figure class="image-box style-one"><img src="../assets/thriposha_assets/images/home/bg_1.png" alt=""></figure>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
         <!-- banner-section end -->
 
 
