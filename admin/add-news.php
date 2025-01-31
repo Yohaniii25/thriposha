@@ -1,40 +1,40 @@
 <?php
 
 session_start();
-require '../includes/db_connection.php';
 
-// include functions file
-include '../includes/functions.php';
-
-// Ensure that the user is logged in
 if (!isset($_SESSION['admin_id'])) {
-    header('Location: login.php');
+
+    header("Location: login.php");
     exit();
 }
 
+
+require '../includes/db_connection.php';
+
+include '../includes/functions.php';
+
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Get form data
     $title = $_POST['title'];
     $news_description = $_POST['news_description'];
 
     // Handle file upload
-    $image = '';  // Initialize image variable
+    $image = ''; 
     if (isset($_FILES['image']) && $_FILES['image']['error'] == 0) {
-        $upload_dir = '../assets/thriposha_assets/images/news/';  // Directory where images will be uploaded
+        $upload_dir = '../assets/thriposha_assets/images/news/';  
         $image = basename($_FILES['image']['name']);
         $target_file = $upload_dir . $image;
 
-        // Move uploaded file to the directory
         if (move_uploaded_file($_FILES['image']['tmp_name'], $target_file)) {
-            // File uploaded successfully
         } else {
             echo "Error uploading file.";
         }
     }
 
+
     // Insert news into the database
     $stmt = $conn->prepare("INSERT INTO news (title, news_description, image, adminId) VALUES (?, ?, ?, ?)");
-    $adminId = $_SESSION['admin_id'];  // Admin ID from session, which matches the users.id
+    $adminId = $_SESSION['admin_id'];  
     $stmt->bind_param("sssi", $title, $news_description, $image, $adminId);
     $stmt->execute();
 
@@ -43,10 +43,33 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } else {
         echo "Error adding news: " . $stmt->error;
     }
-
-    // Close statement
     $stmt->close();
+
+
+    // Handle gallery images (table name : gallery_images , columns : id, news_id, image_path)
+    $news_id = $conn->insert_id; 
+    if (isset($_FILES['gallery_images']) && $_FILES['gallery_images']['error'][0] == 0) {
+        $upload_dir = '../assets/thriposha_assets/images/news_gallery/';  
+        $gallery_images = $_FILES['gallery_images'];
+        $gallery_images_count = count($gallery_images['name']);
+
+        for ($i = 0; $i < $gallery_images_count; $i++) {
+            $gallery_image = basename($gallery_images['name'][$i]);
+            $target_file = $upload_dir . $gallery_image;
+
+            if (move_uploaded_file($gallery_images['tmp_name'][$i], $target_file)) {
+                $stmt = $conn->prepare("INSERT INTO gallery_images (news_id, image_path) VALUES (?, ?)");
+                $stmt->bind_param("is", $news_id, $gallery_image);
+                $stmt->execute();
+                $stmt->close();
+            } else {
+                echo "Error uploading file.";
+            }
+        }
+    }
+
 }
+
 ?>
 
 
@@ -126,7 +149,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                             <i data-feather="home"></i>
                                         </a>
                                     </li>
-                                    
+
                                     <li class="breadcrumb-item active">Add News</li>
                                 </ol>
                             </div>
@@ -147,39 +170,39 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                             <form class="needs-validation add-product-form" novalidate="" action="add-news.php" method="post" enctype="multipart/form-data">
                                                 <div class="form">
                                                     <div class="form-group mb-3 row">
-                                                        <label for="validationCustom01"
-                                                            class="col-xl-3 col-sm-4 mb-0">Title :</label>
+                                                        <label for="validationCustom01" class="col-xl-3 col-sm-4 mb-0">Title :</label>
                                                         <div class="col-xl-8 col-sm-7">
-                                                            <input class="form-control" id="validationCustom01"name="title"
-                                                                type="text" required="">
+                                                            <input class="form-control" id="validationCustom01" name="title" type="text" required="">
                                                         </div>
                                                         <div class="valid-feedback">Looks good!</div>
                                                     </div>
                                                     <div class="form-group mb-3 row">
-                                                        <label for="validationCustom01"
-                                                            class="col-xl-3 col-sm-4 mb-0">Image :</label>
+                                                        <label for="validationCustom01" class="col-xl-3 col-sm-4 mb-0">Main Image :</label>
                                                         <div class="col-xl-8 col-sm-7">
-                                                            <input class="form-control" id="validationCustom01"name="image"
-                                                                type="file" required="">
+                                                            <input class="form-control" id="validationCustom01" name="image" type="file" required="">
+                                                        </div>
+                                                        <div class="valid-feedback">Looks good!</div>
+                                                    </div>
+                                                    <div class="form-group mb-3 row">
+                                                        <label for="validationCustom01" class="col-xl-3 col-sm-4 mb-0">Gallery Images :</label>
+                                                        <div class="col-xl-8 col-sm-7">
+                                                            <input class="form-control" id="validationCustom01" name="gallery_images[]" type="file" multiple>
                                                         </div>
                                                         <div class="valid-feedback">Looks good!</div>
                                                     </div>
                                                     <div class="form-group row">
                                                         <label class="col-xl-3 col-sm-4">Add Description :</label>
                                                         <div class="col-xl-8 col-sm-7 description-sm">
-                                                            <textarea name="news_description" cols="10" id="editor1"
-                                                                rows="4"></textarea>
+                                                            <textarea name="news_description" cols="10" id="editor1" rows="4"></textarea>
                                                         </div>
                                                         <div class="offset-xl-3 offset-sm-4 mt-4">
                                                             <button type="submit" class="btn btn-primary">Add</button>
                                                             <button type="button" class="btn btn-light">Discard</button>
                                                         </div>
                                                     </div>
-
-
                                                 </div>
-
                                             </form>
+
                                         </div>
                                     </div>
                                 </div>

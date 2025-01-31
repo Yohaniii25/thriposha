@@ -1,3 +1,17 @@
+<?php
+session_start();
+
+// Check if the user is logged in
+if (!isset($_SESSION['admin_id'])) {
+    // Redirect to login page if not logged in
+    header("Location: login.php");
+    exit();
+}
+?>
+
+<!-- include db connection -->
+<?php include '../includes/db_connection.php'; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -102,7 +116,7 @@
                                         </div>
                                         <div class="media-body media-doller">
                                             <span class="m-0">News</span>
-                                            <h3 class="mb-0"><span class="counter">6659</span>
+                                            <h3 class="mb-0"><span class="counter">5</span>
                                             </h3>
                                         </div>
                                     </div>

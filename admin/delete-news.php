@@ -1,47 +1,58 @@
 <?php
-
 session_start();
 require '../includes/db_connection.php';
 
-// Ensure that the user is logged in
+// Ensure admin is logged in
 if (!isset($_SESSION['admin_id'])) {
     header('Location: login.php');
     exit();
 }
 
-// Check if the 'news_id' is passed in the URL
-if (isset($_GET['news_id'])) {
-    $news_id = $_GET['news_id'];
+// Validate news_id
+if (!isset($_GET['news_id']) || !is_numeric($_GET['news_id'])) {
+    die("Invalid news_id.");
+}
+$news_id = intval($_GET['news_id']); // Convert to integer
 
-    // Fetch the news item to check if it exists
-    $query = "SELECT * FROM news WHERE news_id = '$news_id'";
-    $result = mysqli_query($conn, $query);
+// Fetch the news image
+$stmt = $conn->prepare("SELECT image FROM news WHERE news_id = ?");
+if (!$stmt) {
+    die("SQL Error: " . $conn->error); // Debugging
+}
+$stmt->bind_param("i", $news_id);
+$stmt->execute();
+$stmt->bind_result($news_image);
+$stmt->fetch();
+$stmt->close();
 
-    if (mysqli_num_rows($result) > 0) {
-        $news = mysqli_fetch_assoc($result);
-
-        // Delete associated image if it exists
-        if (!empty($news['image'])) {
-            $image_path = "../assets/images/news/" . $news['image'];
-            if (file_exists($image_path)) {
-                unlink($image_path); // Remove the image
-            }
-        }
-
-        // Delete the news record from the database
-        $delete_query = "DELETE FROM news WHERE news_id = '$news_id'";
-        if (mysqli_query($conn, $delete_query)) {
-            // Redirect back to the news list
-            header("Location: all-news.php?message=News+deleted+successfully");
-            exit();
-        } else {
-            echo "Error deleting news: " . mysqli_error($conn);
-        }
-    } else {
-        echo "No news found with the given ID.";
+// Delete the image file if it exists
+if (!empty($news_image)) {
+    $image_path = "../assets/images/news/" . $news_image;
+    if (file_exists($image_path)) {
+        unlink($image_path);
     }
-} else {
-    echo "news_id is required.";
+}
+
+// Delete associated gallery images
+$stmt = $conn->prepare("DELETE FROM gallery_images WHERE news_id = ?");
+if (!$stmt) {
+    die("SQL Error: " . $conn->error);
+}
+$stmt->bind_param("i", $news_id);
+$stmt->execute();
+$stmt->close();
+
+// Now delete the news record
+$stmt = $conn->prepare("DELETE FROM news WHERE news_id = ?");
+if (!$stmt) {
+    die("SQL Error: " . $conn->error);
+}
+$stmt->bind_param("i", $news_id);
+if ($stmt->execute()) {
+    $stmt->close();
+    header("Location: all-news.php?message=News+deleted+successfully");
     exit();
+} else {
+    echo "Error deleting news: " . $conn->error;
 }
 ?>

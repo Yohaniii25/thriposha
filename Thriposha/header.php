@@ -1,3 +1,18 @@
+
+        <style>
+            a.VIpgJd-ZVi9od-l4eHX-hSRGPd {
+            display: none;
+            }
+            
+.goog-te-gadget {
+    color: #fff0;
+}
+select.goog-te-combo {
+    padding: 5px;
+    border-radius: 10px;
+}
+        </style>
+        
         <!-- main header -->
         <header class="main-header style-one">
 
@@ -24,63 +39,54 @@
                                             <li><a href="about.php">Overview</a></li>
                                             <li><a href="about.php#vision">Vision & Mission</a></li>
                                             <li><a href="about.php#message">Message from Ministry / President</a></li>
-                                            <li><a href="about.php#team">Board of Directors</a></li>
+                                            <li><a href="directors.php">Board of Directors</a></li>
+                                            <li><a href="management.php">Our Managemnt Team</a></li>
                                             <li><a href="about.php#organization">Organization Structure</a></li>
-                                            <li><a href="about.php#audit">Our Services</a></li>
-                                        </ul>
+                                            
+                                     </ul>
                                     </li>
-                                    <li class="dropdown"><a href="#">Media</a>
+                                    <li class="dropdown"><a href="news.php">Media</a>
                                         <ul>
                                             
                                             <li><a href="news.php">News</a></li>
                                         </ul>
                                     </li>
-                                    <li class="dropdown"><a href="#">Products</a>
+                                    <li class="dropdown"><a href="products.php">Products</a>
                                         <ul>
                                             <li><a href="products.php">Thriposha Products</a></li>
                                             <li><a href="history.php">History of Thriposha Production</a></li>
-                                            <li><a href="#">What is Thriposha</a></li>
+                                            <!--<li><a href="#">What is Thriposha</a></li>-->
                                             <li><a href="nutrient-content.php">Nutritient Content</a></li>
-                                            <li><a href="#">Raw materials</a></li>
+                                            <!--<li><a href="#">Raw materials</a></li>-->
                                             <li><a href="distribution-of-thriposha.php">Distribution of Thriposha</a></li>
                                         </ul>
                                     </li>
                                     <li class="dropdown"><a href="our-services.php">Services</a>
                                         <ul>
+                                            <li><a href="tenders.php">Tenders</a></li>
                                             <li><a href="careers.php">Careers</a></li>
                                             <li><a href="donations.php">Donations</a></li>
                                         </ul>
                                     </li>
+                                    
                                     <li class="dropdown"><a href="contact.php">Contact</a>
                                         <ul>
                                             <li><a href="faq.php">FAQ</a></li>
                                         </ul>
                                     </li>
-                                    <li class="more-btn centred">
-                                        <a href="../suposha/index.php" style="padding: 10px 30px; border-radius:20px;" class="theme-btn-one">Visit Suposha</a>
+                                    <li><a href="../suposha/index.php">Visit Suposha</a>
                                     </li>
+                                    
+                                    <li >
+                                        <div id="google_translate_element"></div>
+
+                                    </li>
+
                                 </ul>
                             </div>
                         </nav>
                     </div>
-                    <!--<ul class="menu-right-content clearfix">-->
-                    <!--    <li class="search-box-outer">-->
-                    <!--        <div class="dropdown">-->
-                    <!--            <button class="search-box-btn" style="background-image: url(../assets/thriposha_assets/images/icons/icon-bg-1.png);" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="icon-Search"></i></button>-->
-                    <!--            <div class="dropdown-menu search-panel" aria-labelledby="dropdownMenu3">-->
-                    <!--                <div class="form-container">-->
-                    <!--                    <form method="post" action="blog.php">-->
-                    <!--                        <div class="form-group">-->
-                    <!--                            <input type="search" name="search-field" value="" placeholder="Search...." required="">-->
-                    <!--                            <button type="submit" class="search-btn"><span class="fas fa-search"></span></button>-->
-                    <!--                        </div>-->
-                    <!--                    </form>-->
-                    <!--                </div>-->
-                    <!--            </div>-->
-                    <!--        </div>-->
-                    <!--    </li>-->
 
-                    <!--</ul>-->
                 </div>
             </div>
 
@@ -93,31 +99,25 @@
                     <div class="menu-area">
                         <nav class="main-menu clearfix">
                             <!--Keep This Empty / Menu will come through Javascript-->
+             
                         </nav>
+                        <!--<div id="google_translate_element">tt</div>-->
                     </div>
-                    <!--<ul class="menu-right-content clearfix">-->
-                    <!--    <li class="search-box-outer">-->
-                    <!--        <div class="dropdown">-->
-                    <!--            <button class="search-box-btn" style="background-image: url(../assets/thriposha_assets/images/icons/icon-bg-1.png);" type="button" id="dropdownMenu4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="icon-Search"></i></button>-->
-                    <!--            <div class="dropdown-menu search-panel" aria-labelledby="dropdownMenu4">-->
-                    <!--                <div class="form-container">-->
-                    <!--                    <form method="post" action="blog.php">-->
-                    <!--                        <div class="form-group">-->
-                    <!--                            <input type="search" name="search-field" value="" placeholder="Search...." required="">-->
-                    <!--                            <button type="submit" class="search-btn"><span class="fas fa-search"></span></button>-->
-                    <!--                        </div>-->
-                    <!--                    </form>-->
-                    <!--                </div>-->
-                    <!--            </div>-->
-                    <!--        </div>-->
-                    <!--    </li>-->
 
-                    <!--</ul>-->
                 </div>
             </div>
         </header>
         <!-- main-header end -->
 
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
+<div id="google_translate_element"></div>
 
-        <!-- Why this  -->
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+            pageLanguage: 'en',
+            includedLanguages: 'si,ta,en'  // Sinhala (si), Tamil (ta), English (en)
+        }, 'google_translate_element');
+    }
+</script>

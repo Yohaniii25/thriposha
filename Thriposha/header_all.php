@@ -1,3 +1,5 @@
+
+
 <header class="main-header style-one style-five">
     <!-- header-lower -->
     <div class="header-lower">
@@ -22,29 +24,31 @@
                                     <li><a href="about.php">Overview</a></li>
                                     <li><a href="about.php#vision">Vision & Mission</a></li>
                                     <li><a href="about.php#message">Message from Ministry / President</a></li>
-                                    <li><a href="about.php#team">Board of Directors</a></li>
+                                    <li><a href="directors.php">Board of Directors</a></li>
+                                    <li><a href="management.php">Our Managemnt Team</a></li>
                                     <li><a href="about.php#organization">Organization Structure</a></li>
-                                    <li><a href="about.php#audit">Our Services</a></li>
+                                    
                                 </ul>
                             </li>
-                            <li class="dropdown"><a href="#">Media</a>
+                            <li class="dropdown"><a href="news.php">Media</a>
                                 <ul>
                                     
                                     <li><a href="news.php">News</a></li>
                                 </ul>
                             </li>
-                            <li class="dropdown"><a href="#">Products</a>
+                            <li class="dropdown"><a href="products.php">Products</a>
                                         <ul>
                                             <li><a href="products.php">Thriposha Products</a></li>
                                             <li><a href="history.php">History of Thriposha Production</a></li>
-                                            <li><a href="#">What is Thriposha</a></li>
+                                            <!--<li><a href="#">What is Thriposha</a></li>-->
                                             <li><a href="nutrient-content.php">Nutritient Content</a></li>
-                                            <li><a href="#">Raw materials</a></li>
+                                            <!--<li><a href="#">Raw materials</a></li>-->
                                             <li><a href="distribution-of-thriposha.php">Distribution of Thriposha</a></li>
                                         </ul>
                                     </li>
                             <li class="dropdown"><a href="our-services.php">Services</a>
                                 <ul>
+                                    <li><a href="tenders.php">Tenders</a></li>
                                     <li><a href="careers.php">Careers</a></li>
                                     <li><a href="donations.php">Donations</a></li>
                                     
@@ -55,33 +59,19 @@
                                     <li><a href="faq.php">FAQ</a></li>
                                 </ul>
                             </li>
-                                         <li class="more-btn centred">
-                                        <a href="../suposha/index.php" style="padding: 10px 30px; border-radius:20px;" class="theme-btn-one">Visit Suposha</a>
-                                    </li>
+                            <li><a href="../suposha/index.php">Visit Suposha</a></li>
+                                    
+                             <li>
+                                 <div id="google_translate_element" class="translate-widget"></div>
+
+                            </li>
                         </ul>
                     </div>
                     
 
                 </nav>
             </div>
-            <!-- <ul class="menu-right-content clearfix">
-                <li class="search-box-outer">
-                    <div class="dropdown">
-                        <button class="search-box-btn" style="background-image: url(../assets/thriposha_assets/images/icons/icon-bg-1.png);" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="icon-Search"></i></button>
-                        <div class="dropdown-menu search-panel" aria-labelledby="dropdownMenu3">
-                            <div class="form-container">
-                                <form method="post" action="blog.php">
-                                    <div class="form-group">
-                                        <input type="search" name="search-field" value="" placeholder="Search...." required="">
-                                        <button type="submit" class="search-btn"><span class="fas fa-search"></span></button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-      
-            </ul> -->
+
         </div>
     </div>
 
@@ -96,34 +86,49 @@
                     <!--Keep This Empty / Menu will come through Javascript-->
                 </nav>
             </div>
-            <!-- <ul class="menu-right-content clearfix">
-                <li class="search-box-outer">
-                    <div class="dropdown">
-                        <button class="search-box-btn" style="background-image: url(../assets/thriposha_assets/images/icons/icon-bg-1.png);" type="button" id="dropdownMenu4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="icon-Search"></i></button>
-                        <div class="dropdown-menu search-panel" aria-labelledby="dropdownMenu4">
-                            <div class="form-container">
-                                <form method="post" action="blog.php">
-                                    <div class="form-group">
-                                        <input type="search" name="search-field" value="" placeholder="Search...." required="">
-                                        <button type="submit" class="search-btn"><span class="fas fa-search"></span></button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </li> -->
-                <!-- <li class="user-btn">
-                            <a href="index.php" style="background-image: url(../assets/thriposha_assets/images/icons/icon-bg-1.png);">
-                                <i class="icon-Profile"></i>
-                            </a>
-                        </li>
-                        <li class="cart-btn">
-                            <a href="shop-1.php" style="background-image: url(../assets/thriposha_assets/images/icons/icon-bg-1.png);">
-                                <i class="icon-Bag"></i>
-                                <span>3</span>
-                            </a>
-                        </li> -->
-            <!-- </ul> -->
+   
         </div>
     </div>
 </header>
+
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+            pageLanguage: 'en',
+            includedLanguages: 'si,ta,en', // Sinhala, Tamil, English
+        }, 'google_translate_element');
+    }
+</script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<style>
+    
+    .translate-widget {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.menu-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#google_translate_element {
+    min-width: 150px; /* Adjust as needed */
+    text-align: right;
+}
+
+a.VIpgJd-ZVi9od-l4eHX-hSRGPd {
+    display: none;
+}
+
+.goog-te-gadget {
+   
+    color: #fff;
+   
+}
+
+</style>

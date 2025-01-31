@@ -1,76 +1,97 @@
 <?php
-
 session_start();
-require '../includes/db_connection.php';
 
-// include functions file
-include '../includes/functions.php';
-
-// Ensure that the user is logged in
 if (!isset($_SESSION['admin_id'])) {
     header('Location: login.php');
     exit();
 }
 
-// Check if the 'news_id' is passed in the URL
+require '../includes/db_connection.php';
+
 if (isset($_GET['news_id'])) {
     $news_id = $_GET['news_id'];
 
-    // Fetch the current news data from the database
-    $query = "SELECT * FROM news WHERE news_id = '$news_id'";
-    $result = mysqli_query($conn, $query);
+    // Fetch news details
+    $query = "SELECT * FROM news WHERE news_id = ?";
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param("i", $news_id);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
-    if (mysqli_num_rows($result) > 0) {
-        $news = mysqli_fetch_assoc($result);
+    if ($result->num_rows > 0) {
+        $news = $result->fetch_assoc();
     } else {
         echo 'No news found with the given ID.';
         exit();
     }
+    $stmt->close();
+
+    // Fetch gallery images
+    $gallery_query = "SELECT * FROM gallery_images WHERE news_id = ?";
+    $stmt = $conn->prepare($gallery_query);
+    $stmt->bind_param("i", $news_id);
+    $stmt->execute();
+    $gallery_result = $stmt->get_result();
+    $gallery_images = [];
+    while ($row = $gallery_result->fetch_assoc()) {
+        $gallery_images[] = $row;
+    }
+    $stmt->close();
 } else {
     echo 'news_id is required.';
     exit();
 }
 
-// Handle the form submission
+// Update news
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $title = mysqli_real_escape_string($conn, $_POST['title']);
     $news_description = mysqli_real_escape_string($conn, $_POST['news_description']);
 
     // Handle image upload
-    $image = $_FILES['image']['name'];
-    if ($image) {
+    if (!empty($_FILES['image']['name'])) {
+        $image = basename($_FILES['image']['name']);
         $target_dir = '../assets/thriposha_assets/images/news/';
-        $target_file = $target_dir . basename($image);
+        $target_file = $target_dir . $image;
 
-        // Check if the file is a valid image
-        if (getimagesize($_FILES['image']['tmp_name'])) {
-            if (move_uploaded_file($_FILES['image']['tmp_name'], $target_file)) {
-                // Update with new image
-                $update_query = "UPDATE news SET title = '$title', news_description = '$news_description', image = '$image' WHERE news_id = '$news_id'";
-            } else {
-                echo 'Error uploading image.';
-                exit();
-            }
+        if (getimagesize($_FILES['image']['tmp_name']) && move_uploaded_file($_FILES['image']['tmp_name'], $target_file)) {
+            $stmt = $conn->prepare("UPDATE news SET title = ?, news_description = ?, image = ? WHERE news_id = ?");
+            $stmt->bind_param("sssi", $title, $news_description, $image, $news_id);
         } else {
-            echo 'Please upload a valid image.';
+            echo 'Error uploading image.';
             exit();
         }
     } else {
-        // Update without image
-        $update_query = "UPDATE news SET title = '$title', news_description = '$news_description' WHERE news_id = '$news_id'";
+        $stmt = $conn->prepare("UPDATE news SET title = ?, news_description = ? WHERE news_id = ?");
+        $stmt->bind_param("ssi", $title, $news_description, $news_id);
     }
 
-    // Execute the query and handle success/failure
-    if (mysqli_query($conn, $update_query)) {
-        // Redirect to the news list page
+    if ($stmt->execute()) {
+        $stmt->close();
+
+        // Handle gallery images upload
+        if (!empty($_FILES['gallery_images']['name'][0])) {
+            $upload_dir = '../assets/thriposha_assets/images/news_gallery/';
+            foreach ($_FILES['gallery_images']['name'] as $key => $image_name) {
+                $gallery_image = basename($image_name);
+                $target_file = $upload_dir . $gallery_image;
+
+                if (move_uploaded_file($_FILES['gallery_images']['tmp_name'][$key], $target_file)) {
+                    $stmt = $conn->prepare("INSERT INTO gallery_images (news_id, image_path) VALUES (?, ?)");
+                    $stmt->bind_param("is", $news_id, $gallery_image);
+                    $stmt->execute();
+                    $stmt->close();
+                }
+            }
+        }
+
         header("Location: all-news.php");
         exit();
     } else {
-        echo "Error: " . mysqli_error($conn);
+        echo "Error: " . $conn->error;
     }
 }
-
 ?>
+
 
 
 <!DOCTYPE html>
@@ -186,6 +207,39 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                                         <div class="valid-feedback">Looks good!</div>
                                                     </div>
 
+                                                    <!-- gallery image section -->
+                                                    <!-- Gallery Images Section -->
+                                                    <div class="form-group row">
+                                                        <label class="col-xl-3 col-sm-4">Gallery Images :</label>
+                                                        <div class="col-xl-8 col-sm-7">
+                                                            <div class="row">
+                                                                <?php
+                                                                $gallery_query = $conn->prepare("SELECT * FROM gallery_images WHERE news_id = ?");
+                                                                $gallery_query->bind_param("i", $news_id);
+                                                                $gallery_query->execute();
+                                                                $result = $gallery_query->get_result();
+                                                                while ($row = $result->fetch_assoc()):
+                                                                ?>
+                                                                    <div class="col-md-3">
+                                                                        <img src="../assets/thriposha_assets/images/news_gallery/<?php echo $row['image_path']; ?>" alt="Gallery Image" width="100">
+                                                                        <a href="delete-gallery-image.php?id=<?php echo $row['id']; ?>&news_id=<?php echo $news_id; ?>" class="btn btn-sm btn-danger">Delete</a>
+                                                                    </div>
+                                                                <?php endwhile; ?>
+                                                                <?php $gallery_query->close(); ?>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Upload New Gallery Images -->
+                                                    <div class="form-group row">
+                                                        <label class="col-xl-3 col-sm-4">Add More Images :</label>
+                                                        <div class="col-xl-8 col-sm-7">
+                                                            <input class="form-control" name="gallery_images[]" type="file" multiple>
+                                                            <small>Upload multiple images</small>
+                                                        </div>
+                                                    </div>
+
+
                                                     <div class="form-group row">
                                                         <label class="col-xl-3 col-sm-4">Add Description :</label>
                                                         <div class="col-xl-8 col-sm-7 description-sm">
@@ -196,6 +250,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                                             <a href="all-news.php" class="btn btn-light">Cancel</a>
                                                         </div>
                                                     </div>
+
                                                 </div>
                                             </form>
                                         </div>

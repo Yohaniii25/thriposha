@@ -40,8 +40,31 @@
                             </ul>
                         </li>
 
+                        <li>
+                            <a class="sidebar-header" href="javascript:void(0)">
+                                <i data-feather="box"></i>
+                                <span>Products</span>
+                                <i class="fa fa-angle-right pull-right"></i>
+                            </a>
+
+                            <ul class="sidebar-submenu">
+                                <li>
+                                    <a href="add-product.php">
+                                        <i class="fa fa-circle"></i>
+                                        <span>Add Product</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="all-products.php">
+                                        <i class="fa fa-circle"></i>
+                                        <span>View all products</span>
+                                    </a>
+                                </li>
 
 
+                            </ul>
+                        </li>
 
 
                         <li>
