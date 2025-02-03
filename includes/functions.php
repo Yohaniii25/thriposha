@@ -39,3 +39,24 @@ function fetchNewsById($news_id) {
         return null;
     }
 }
+
+
+function fetchDocuments() {
+    global $conn; 
+
+    $query = "SELECT id, title, category FROM documents order by created_at DESC";
+    $result = mysqli_query($conn, $query);
+
+    // check if the query is successful
+    if (!$result) {
+        echo "Error: " . mysqli_error($conn);
+        exit();
+    }
+
+    // Return the fetched rows if available, otherwise return an empty array
+    if (mysqli_num_rows($result) > 0) {
+        return mysqli_fetch_all($result, MYSQLI_ASSOC);
+    } else {
+        return [];
+    }
+}

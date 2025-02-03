@@ -42,6 +42,32 @@
 
                         <li>
                             <a class="sidebar-header" href="javascript:void(0)">
+                                <i data-feather="file-text"></i>
+                                <span>Documents</span>
+                                <i class="fa fa-angle-right pull-right"></i>
+                            </a>
+
+                            <ul class="sidebar-submenu">
+                                <li>
+                                    <a href="add_documents.php">
+                                        <i class="fa fa-circle"></i>
+                                        <span>Add Documents</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="all-documents.php">
+                                        <i class="fa fa-circle"></i>
+                                        <span>View all Documents</span>
+                                    </a>
+                                </li>
+
+
+                            </ul>
+                        </li>
+
+                        <!-- <li>
+                            <a class="sidebar-header" href="javascript:void(0)">
                                 <i data-feather="box"></i>
                                 <span>Products</span>
                                 <i class="fa fa-angle-right pull-right"></i>
@@ -64,7 +90,7 @@
 
 
                             </ul>
-                        </li>
+                        </li> -->
 
 
                         <li>
