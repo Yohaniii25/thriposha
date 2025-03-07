@@ -30,6 +30,64 @@
     <link href="../assets/thriposha_assets/css/style.css" rel="stylesheet">
     <link href="../assets/thriposha_assets/css/responsive.css" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <style>
+        .btn-primary:focus,
+        .btn-primary.focus {
+            color: #fff;
+            background-color: #FF5722;
+            border-color: #FF5722;
+            box-shadow: 0 0 0 0.2rem rgb(255 87 34 / 46%);
+        }
+
+        .downloads-table {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .download-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        .document-name {
+            font-size: 16px;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .btn-primary {
+            background-color: #FF5722;
+            color: #fff;
+            padding: 8px 16px;
+            text-decoration: none;
+            border-radius: 5px;
+            border-color: #FF5722;
+        }
+
+        .btn-primary:hover {
+            background-color: #ff4a3c;
+        }
+
+        @media (max-width: 768px) {
+            .download-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .btn-primary {
+                margin-top: 10px;
+            }
+        }
+    </style>
+
 </head>
 
 
@@ -77,34 +135,48 @@
 
         <!-- ourstory-style-three -->
         <section class="ourstory-style-three">
-            <div class="auto-container">
-                <div class="row align-items-center clearfix">
-                    <div class="col-lg-12 col-md-12 col-sm-12 content-column">
-                        <div id="content_block_3">
-                            <div class="content-box">
-                                <div class="sec-title">
-                                    <p>Since Est. 1973</p>
-                                    <h2>Come and join with Us</h2>
-                                </div>
-                                <div class="text">
-                                    <p style="text-align:justify;">
-                                        Explore our careers and be a part of Sri Lanka Thriposha Limited and be a force for Thriposha. Help us make a real difference on a national scale. With an energetic presence in Sri Lanka, we’re dedicated to our purpose of eradicating malnutrition to enhance the quality of life for everyone. Whether you’re starting or continuing your career, explore how you can work with us.
-                                        At Sri Lanka Thriposha Limited, we believe in the power of healthy people to enhance the quality of life for everyone in Sri Lanka. Guided by this purpose, we constantly aim to push the beyond boundaries of what’s possible with production. Our people make this possible. They are behind the strength of our brands, the quality of our products, and the future of our organization and business.
-                                        When you join Sri Lanka Thriposha Limited, you join a collaborative & agile working environment that stretches your thinking pattern and encourages innovation. You also become part of our culture that is rooted in respect, empowered to experiment and open to new learning opportunities.
-
-                                    </p>
-                                </div>
-                                <!-- <div class="btn-box">
-                                <a href="contact.php" class="theme-btn-one">Contact Us</a>
-                            </div> -->
+        <div class="auto-container">
+            <div class="row align-items-center clearfix">
+                <div class="col-lg-12 col-md-12 col-sm-12 content-column">
+                    <div class="container mt-4">
+                        <div class="sec-title text-center mb-5">
+                            <h2>Current Job Openings</h2>
+                        </div>
+                        <div class="downloads-table">
+                            <div class="download-item">
+                                <span class="document-name">Boilerman - PL - 2</span>
+                                <a href="../assets/thriposha_assets/documents/Boilerman.pdf" class="btn btn-primary" download>Download</a>
+                            </div>
+                            <div class="download-item">
+                                <span class="document-name">Egineering Service (JM - 1 - 1 - 2016)</span>
+                                <a href="../assets/thriposha_assets/documents/Egineering_Service_Officer.pdf" class="btn btn-primary" download>Download</a>
+                            </div>
+                            <div class="download-item">
+                                <span class="document-name">Fitter</span>
+                                <a href="../assets/thriposha_assets/documents/Fitter.pdf" class="btn btn-primary" download>Download</a>
+                            </div>
+                            <div class="download-item">
+                                <span class="document-name">Management Assistant Non-Technical (MA - 1 - 1 - 2016)</span>
+                                <a href="../assets/thriposha_assets/documents/MA_Non_Tech.pdf" class="btn btn-primary" download>Download</a>
+                            </div>
+                            <div class="download-item">
+                                <span class="document-name">Management Assistant Technology Division 2 (Male) MA - 2 - 1 - 2016</span>
+                                <a href="../assets/thriposha_assets/documents/MA_Tech.pdf" class="btn btn-primary" download>Download</a>
+                            </div>
+                            <div class="download-item">
+                                <span class="document-name">Production Officer - (JM - 1 - 1 - 2016)</span>
+                                <a href="../assets/thriposha_assets/documents/Production_Officer.pdf" class="btn btn-primary" download>Download</a>
                             </div>
                         </div>
                     </div>
-
                 </div>
+
             </div>
-        </section>
+        </div>
+    </section>
         <!-- ourstory-style-three end -->
+
+
 
 
         <!-- main-footer -->
@@ -135,6 +207,8 @@
     <script src="../assets/thriposha_assets/js/jquery-ui.js"></script>
     <script src="../assets/thriposha_assets/js/bxslider.js"></script>
     <script src="../assets/thriposha_assets/js/jquery.bootstrap-touchspin.js"></script>
+
+
 
     <!-- main-js -->
     <script src="../assets/thriposha_assets/js/script.js"></script>

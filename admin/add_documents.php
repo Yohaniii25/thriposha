@@ -166,6 +166,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                                                 <option value="" disabled selected>Select Category</option>
                                                                 <option value="tenders">Tenders</option>
                                                                 <option value="procurements">Procurements</option>
+                                                                <option value="career">Careers</option>
                                                             </select>
                                                             <div class="valid-feedback">Looks good!</div>
                                                         </div>

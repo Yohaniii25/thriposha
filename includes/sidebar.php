@@ -94,9 +94,9 @@
 
 
                         <li>
-                            <a class="sidebar-header" href="login.php">
-                                <i data-feather="log-in"></i>
-                                <span>Login</span>
+                            <a class="sidebar-header" href="logout.php">
+                                <i data-feather="log-out"></i>
+                                <span>Logout</span>
                             </a>
                         </li>
                     </ul>

@@ -47,67 +47,61 @@
     <div class="page-wrapper">
         <div class="authentication-box">
             <div class="container">
-                <div class="row">
-                    <div class="col-md-5 p-0 card-left">
-                        <div class="card bg-primary">
-                            <div class="svg-icon">
-                                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-                                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                    viewBox="0 0 468.52 468.52" style="enable-background:new 0 0 468.52 468.52;"
-                                    xml:space="preserve">
-
-                                </svg>
+                <div class="row align-items-center justify-content-center">
+                    <!-- Left Section: Welcome & Logos -->
+                    <div class="col-md-5 p-0">
+                        <div class="card shadow-lg text-center p-4" style="background-color: #e76a23; border-radius: 15px;">
+                            <!-- First Logo -->
+                            <div class="logo mb-3">
+                                <img src="../assets/images/landing/triposhalogo.png" alt="Thriposha Logo" width="180">
                             </div>
 
-                            <div class="single-item">
-                                <div>
-                                    <div>
-                                        <h3>Welcome to Thriposha LTD</h3>
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                            Lorem Ipsum has been the industry's standard dummy.</p>
-                                    </div>
-                                </div>
-        
+                            <h3 class="text-white fw-bold">Welcome to Thriposha LTD</h3>
+
+                            <!-- Second Logo -->
+                            <div class="logo mt-3">
+                                <img src="../assets/images/landing/suposhalogo.png" alt="Suposha Logo" width="180">
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-7 p-0 card-right">
-                        <div class="card tab2-card card-login">
+
+                    <!-- Right Section: Login Form -->
+                    <div class="col-md-6 p-0">
+                        <div class="card shadow-lg border-0 p-4" style="border-radius: 15px;">
                             <div class="card-body">
-                                <ul class="nav nav-tabs nav-material" id="top-tab" role="tablist">
+                                <ul class="nav nav-tabs nav-material mb-4" id="top-tab" role="tablist">
                                     <li class="nav-item">
-                                        <a class="nav-link active" id="top-profile-tab" data-bs-toggle="tab"
+                                        <a class="nav-link active text-dark fw-bold" id="top-profile-tab" data-bs-toggle="tab"
                                             href="#top-profile" role="tab" aria-controls="top-profile"
                                             aria-selected="true"><span class="icon-user me-2"></span>Login</a>
                                     </li>
-
                                 </ul>
+
                                 <div class="tab-content" id="top-tabContent">
                                     <div class="tab-pane fade show active" id="top-profile" role="tabpanel"
                                         aria-labelledby="top-profile-tab">
                                         <form action="./classes/loginController.php" method="POST" id="loginForm" class="form-horizontal auth-form">
-                                            <div class="form-group">
-                                                <input required="" name="username" type="text"
-                                                    class="form-control" placeholder="Username" id="username">
+                                            <div class="form-group mb-3">
+                                                <input required name="username" type="text" class="form-control rounded-pill px-3"
+                                                    placeholder="Username" id="username">
                                             </div>
-                                            <div class="form-group">
-                                                <input required="" name="password" type="password" id="password"
-                                                    class="form-control" placeholder="Password">
+                                            <div class="form-group mb-3">
+                                                <input required name="password" type="password" id="password"
+                                                    class="form-control rounded-pill px-3" placeholder="Password">
                                             </div>
 
-                                            <div class="form-button">
-                                                <button class="btn btn-primary" type="submit">Login</button>
+                                            <div class="form-button text-center">
+                                                <button class="btn btn-primary rounded-pill w-100 py-2" type="submit">Login</button>
                                             </div>
 
                                         </form>
                                     </div>
-
-
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
                 <!-- <a href="index.html" class="btn btn-primary back-btn"><i data-feather="arrow-left"></i>back</a> -->
             </div>
         </div>

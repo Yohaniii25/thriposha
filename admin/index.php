@@ -12,6 +12,24 @@ if (!isset($_SESSION['admin_id'])) {
 <!-- include db connection -->
 <?php include '../includes/db_connection.php'; ?>
 
+<!-- get total of documents and news -->
+<?php 
+    $sql = "SELECT * FROM news";
+    $result = mysqli_query($conn, $sql);
+    $news_count = mysqli_num_rows($result);
+
+    $sql = "SELECT * FROM documents";
+    $result = mysqli_query($conn, $sql);
+    $documents_count = mysqli_num_rows($result);
+
+    // total gallery images
+    $sql = "SELECT * FROM gallery_images";
+    $result = mysqli_query($conn, $sql);
+    $gallery_images_count = mysqli_num_rows($result);
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -83,14 +101,14 @@ if (!isset($_SESSION['admin_id'])) {
                             <div class="col-lg-6">
                                 <div class="page-header-left">
                                     <h3>Dashboard
-                                        <small>Multikart Admin panel</small>
+                                        <small>Thriposha LTD Admin Panel</small>
                                     </h3>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <ol class="breadcrumb pull-right">
                                     <li class="breadcrumb-item">
-                                        <a href="index.html">
+                                        <a href="index.php">
                                             <i data-feather="home"></i>
                                         </a>
                                     </li>
@@ -116,7 +134,7 @@ if (!isset($_SESSION['admin_id'])) {
                                         </div>
                                         <div class="media-body media-doller">
                                             <span class="m-0">News</span>
-                                            <h3 class="mb-0"><span class="counter">5</span>
+                                            <h3 class="mb-0"><span class="counter"><?php echo $news_count; ?></span>
                                             </h3>
                                         </div>
                                     </div>
@@ -133,8 +151,26 @@ if (!isset($_SESSION['admin_id'])) {
                                             </div>
                                         </div>
                                         <div class="media-body media-doller">
-                                            <span class="m-0">Products</span>
-                                            <h3 class="mb-0"><span class="counter">9856</span>
+                                            <span class="m-0">Documents</span>
+                                            <h3 class="mb-0"><span class="counter"><?php echo $documents_count; ?></span>
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xxl-3 col-md-6 xl-50">
+                            <div class="card o-hidden">
+                                <div class="danger-box card-body">
+                                    <div class="media static-top-widget align-items-center">
+                                        <div class="icons-widgets">
+                                            <div class="align-self-center text-center">
+                                                <i data-feather="box" class="font-secondary"></i>
+                                            </div>
+                                        </div>
+                                        <div class="media-body media-doller">
+                                            <span class="m-0">Gallery Items</span>
+                                            <h3 class="mb-0"><span class="counter"><?php echo $gallery_images_count; ?></span>
                                             </h3>
                                         </div>
                                     </div>
